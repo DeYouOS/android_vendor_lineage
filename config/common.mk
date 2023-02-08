@@ -174,8 +174,7 @@ PRODUCT_COPY_FILES += \
 
 # rsync
 PRODUCT_PACKAGES += \
-    rsync \
-    frida
+    rsync
 
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -229,5 +228,6 @@ include vendor/lineage/config/version.mk
 
 PRODUCT_PACKAGES += \
     android.hardware.brawn-service \
+    brawnShell \
     BrawnApp \
     brawn
