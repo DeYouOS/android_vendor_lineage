@@ -229,5 +229,6 @@ include vendor/lineage/config/version.mk
 PRODUCT_PACKAGES += \
     android.hardware.brawn-service \
     brawnShell \
+    brawnClient \
     BrawnApp \
-    brawn
+    libfrida
