@@ -17,6 +17,7 @@
 from __future__ import print_function
 
 import base64
+import glob
 import json
 import netrc
 import os
@@ -72,18 +73,17 @@ def add_auth(githubreq):
         githubreq.add_header("Authorization","Basic %s" % githubauth)
 
 if not depsonly:
-    githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:LineageOS+in:name+fork:true" % device)
-    add_auth(githubreq)
+    githubreq = urllib.request.Request("https://raw.githubusercontent.com/LineageOS/mirror/master/default.xml")
     try:
-        result = json.loads(urllib.request.urlopen(githubreq).read().decode())
+        result = ElementTree.fromstring(urllib.request.urlopen(githubreq).read().decode())
     except urllib.error.URLError:
-        print("Failed to search GitHub")
+        print("Failed to fetch data from GitHub")
         sys.exit(1)
     except ValueError:
         print("Failed to parse return data from GitHub")
         sys.exit(1)
-    for res in result.get('items', []):
-        repositories.append(res)
+    for res in result.findall('.//project'):
+        repositories.append(res.attrib['name'][10:])
 
 local_manifests = r'.repo/local_manifests'
 if not os.path.exists(local_manifests): os.makedirs(local_manifests)
@@ -130,28 +130,30 @@ def get_default_revision():
     return r.replace('refs/heads/', '').replace('refs/tags/', '')
 
 def get_from_manifest(devicename):
-    try:
-        lm = ElementTree.parse(".repo/local_manifests/roomservice.xml")
-        lm = lm.getroot()
-    except:
-        lm = ElementTree.Element("manifest")
+    for path in glob.glob(".repo/local_manifests/*.xml"):
+        try:
+            lm = ElementTree.parse(path)
+            lm = lm.getroot()
+        except:
+            lm = ElementTree.Element("manifest")
 
-    for localpath in lm.findall("project"):
-        if re.search("android_device_.*_%s$" % device, localpath.get("name")):
-            return localpath.get("path")
+        for localpath in lm.findall("project"):
+            if re.search("android_device_.*_%s$" % device, localpath.get("name")):
+                return localpath.get("path")
 
     return None
 
 def is_in_manifest(projectpath):
-    try:
-        lm = ElementTree.parse(".repo/local_manifests/roomservice.xml")
-        lm = lm.getroot()
-    except:
-        lm = ElementTree.Element("manifest")
+    for path in glob.glob(".repo/local_manifests/*.xml"):
+        try:
+            lm = ElementTree.parse(path)
+            lm = lm.getroot()
+        except:
+            lm = ElementTree.Element("manifest")
 
-    for localpath in lm.findall("project"):
-        if localpath.get("path") == projectpath:
-            return True
+        for localpath in lm.findall("project"):
+            if localpath.get("path") == projectpath:
+                return True
 
     # Search in main manifest, too
     try:
@@ -289,10 +291,9 @@ if depsonly:
     sys.exit()
 
 else:
-    for repository in repositories:
-        repo_name = repository['name']
+    for repo_name in repositories:
         if re.match(r"^android_device_[^_]*_" + device + "$", repo_name):
-            print("Found repository: %s" % repository['name'])
+            print("Found repository: %s" % repo_name)
             
             manufacturer = repo_name.replace("android_device_", "").replace("_" + device, "")
             repo_path = "device/%s/%s" % (manufacturer, device)
