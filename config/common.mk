@@ -204,6 +204,13 @@ PRODUCT_PACKAGES += \
     NetworkStackOverlay \
     TrebuchetOverlay
 
+PRODUCT_PACKAGES += \
+    camera.virtual \
+    android.hardware.virtualmedia@1.0-service \
+    VirtualMedia
+
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=virtual
+
 # Translations
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay

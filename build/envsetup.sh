@@ -120,7 +120,9 @@ function eat()
 function omnom()
 {
     brunch $*
-    eat
+    if [ $? -eq 0 ]; then
+        eat
+    fi
 }
 
 function cout()
