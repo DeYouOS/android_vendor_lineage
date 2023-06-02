@@ -230,5 +230,10 @@ PRODUCT_PACKAGES += \
     android.hardware.brawn-service \
     brawnShell \
     brawnClient \
-    BrawnApp \
-    libfrida
+    BrawnApp
+    # libfrida
+
+# PRODUCT_PACKAGES += \
+    camera.virtual
+
+# PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=virtual
