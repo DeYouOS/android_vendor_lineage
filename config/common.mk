@@ -231,9 +231,3 @@ PRODUCT_PACKAGES += \
     brawnShell \
     brawnClient \
     BrawnApp
-    # libfrida
-
-# PRODUCT_PACKAGES += \
-    camera.virtual
-
-# PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=virtual
