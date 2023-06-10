@@ -16,6 +16,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     Aperture \
     Backgrounds \
+    ExactCalculator \
+    Profiles \
+    Jelly
+
+# PRODUCT_PACKAGES += \
+    Aperture \
+    Backgrounds \
     Eleven \
     Etar \
     ExactCalculator \
@@ -24,7 +31,7 @@ PRODUCT_PACKAGES += \
     Seedvault
 
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     AudioFX
 endif
 
