@@ -199,7 +199,7 @@ def add_to_manifest(repositories):
         project = ElementTree.Element("project", attrib = {
             "path": repo_target,
             "remote": "github",
-            "name": "LineageOS/%s" % repo_name,
+            "name": "DeYouOS/%s" % repo_name,
             "revision": repo_revision })
         lm.append(project)
 
@@ -259,7 +259,7 @@ def get_default_or_fallback_revision(repo_name):
     print("Default revision: %s" % default_revision)
     print("Checking branch info")
 
-    githubreq = urllib.request.Request("https://api.github.com/repos/LineageOS/" + repo_name + "/branches")
+    githubreq = urllib.request.Request("https://api.github.com/repos/DeYouOS/" + repo_name + "/branches")
     add_auth(githubreq)
     result = json.loads(urllib.request.urlopen(githubreq).read().decode())
     if has_branch(result, default_revision):

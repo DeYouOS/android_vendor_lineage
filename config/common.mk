@@ -210,6 +210,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.virtualmedia@1.0-service \
+    android.hardware.brawn-service \
+    brawnShell \
+    brawnClient \
+    BrawnApp \
     VirtualMedia \
     SogouIME \
     preload_appinstall.sh \
