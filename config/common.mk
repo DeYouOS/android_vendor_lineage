@@ -209,17 +209,15 @@ PRODUCT_PACKAGES += \
     TrebuchetOverlay
 
 PRODUCT_PACKAGES += \
-    android.hardware.virtualmedia@1.0-service \
     android.hardware.brawn-service \
     brawnShell \
     brawnClient \
     BrawnApp \
-    VirtualMedia \
     SogouIME \
-    preload_appinstall.sh \
-    KuaiShouApp \
-    WeiXinApp
+    preload_appinstall.sh
 
+# android.hardware.virtualmedia@1.0-service \
+# VirtualMedia \
 # PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=virtual
 
 # Translations
