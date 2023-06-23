@@ -220,7 +220,7 @@ PRODUCT_PACKAGES += \
     KuaiShouApp \
     WeiXinApp
 
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=virtual
+# PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=virtual
 
 # Translations
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
@@ -235,3 +235,6 @@ include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/brawn/interfaces
