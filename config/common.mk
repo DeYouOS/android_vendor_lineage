@@ -212,7 +212,8 @@ PRODUCT_PACKAGES += \
 
 # redsocks
 PRODUCT_PACKAGES += \
-    redsocks
+    redsocks \
+    frida-server
 
 # google apps
 PRODUCT_COPY_FILES += \
