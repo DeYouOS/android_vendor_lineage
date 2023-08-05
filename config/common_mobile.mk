@@ -14,26 +14,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Apps
 PRODUCT_PACKAGES += \
-    Aperture \
     Backgrounds \
     ExactCalculator \
-    Profiles \
     Jelly
-
-# PRODUCT_PACKAGES += \
-    Aperture \
-    Backgrounds \
-    Eleven \
-    Etar \
-    ExactCalculator \
-    Jelly \
-    Profiles \
-    Seedvault
-
-ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
-# PRODUCT_PACKAGES += \
-    AudioFX
-endif
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
@@ -92,7 +75,8 @@ PRODUCT_PACKAGES += \
     IconShapeTaperedRectOverlay \
     IconShapeTeardropOverlay \
     IconShapeVesselOverlay \
-    LineageNavigationBarNoHint
+    LineageNavigationBarNoHint \
+    NavigationBarMode2ButtonOverlay
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
