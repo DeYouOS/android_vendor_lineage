@@ -213,10 +213,12 @@ PRODUCT_PACKAGES += \
 # redsocks
 PRODUCT_PACKAGES += \
     redsocks \
-    frida-server
+    frida-server \
+    frida-helper-32 \
+    frida-helper-64
 
 # google apps
-PRODUCT_COPY_FILES += \
+# PRODUCT_COPY_FILES += \
     vendor/brawn/google/system/product/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk:system/product/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk \
     vendor/brawn/google/system/product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk:system/product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk \
     vendor/brawn/google/system/product/app/MarkupGoogle/MarkupGoogle.apk:system/product/app/MarkupGoogle/MarkupGoogle.apk \
