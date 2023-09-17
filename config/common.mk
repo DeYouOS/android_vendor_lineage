@@ -220,12 +220,6 @@ PRODUCT_PACKAGES += \
 
 # google apps
 PRODUCT_COPY_FILES += \
-    vendor/brawn/google/system/product/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk:system/product/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk \
-    vendor/brawn/google/system/product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk:system/product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk \
-    vendor/brawn/google/system/product/app/MarkupGoogle/MarkupGoogle.apk:system/product/app/MarkupGoogle/MarkupGoogle.apk \
-    vendor/brawn/google/system/product/app/PrebuiltExchange3Google/PrebuiltExchange3Google.apk:system/product/app/PrebuiltExchange3Google/PrebuiltExchange3Google.apk \
-    vendor/brawn/google/system/product/app/SpeechServicesByGoogle/SpeechServicesByGoogle.apk:system/product/app/SpeechServicesByGoogle/SpeechServicesByGoogle.apk \
-    vendor/brawn/google/system/product/app/talkback/talkback.apk:system/product/app/talkback/talkback.apk \
     vendor/brawn/google/system/product/etc/default-permissions/default-permissions-google.xml:system/product/etc/default-permissions/default-permissions-google.xml \
     vendor/brawn/google/system/product/etc/default-permissions/default-permissions-mtg.xml:system/product/etc/default-permissions/default-permissions-mtg.xml \
     vendor/brawn/google/system/product/etc/permissions/com.google.android.dialer.support.xml:system/product/etc/permissions/com.google.android.dialer.support.xml \
@@ -238,18 +232,7 @@ PRODUCT_COPY_FILES += \
     vendor/brawn/google/system/product/framework/com.google.android.dialer.support.jar:system/product/framework/com.google.android.dialer.support.jar \
     vendor/brawn/google/system/product/lib/libjni_latinimegoogle.so:system/product/lib/libjni_latinimegoogle.so \
     vendor/brawn/google/system/product/lib64/libjni_latinimegoogle.so:system/product/lib64/libjni_latinimegoogle.so \
-    vendor/brawn/google/system/product/overlay/GmsOverlay.apk:system/product/overlay/GmsOverlay.apk \
-    vendor/brawn/google/system/product/overlay/GmsSettingsProviderOverlay.apk:system/product/overlay/GmsSettingsProviderOverlay.apk \
-    vendor/brawn/google/system/product/priv-app/AndroidAutoStub/AndroidAutoStub.apk:system/product/priv-app/AndroidAutoStub/AndroidAutoStub.apk \
-    vendor/brawn/google/system/product/priv-app/GmsCore/GmsCore.apk:system/product/priv-app/GmsCore/GmsCore.apk \
-    vendor/brawn/google/system/product/priv-app/GsfCore/GsfCore.apk:system/product/priv-app/GsfCore/GsfCore.apk \
-    vendor/brawn/google/system/product/priv-app/GooglePartnerSetup/GooglePartnerSetup.apk:system/product/priv-app/GooglePartnerSetup/GooglePartnerSetup.apk \
-    vendor/brawn/google/system/product/priv-app/GoogleRestore/GoogleRestore.apk:system/product/priv-app/GoogleRestore/GoogleRestore.apk \
-    vendor/brawn/google/system/product/priv-app/Phonesky/Phonesky.apk:system/product/priv-app/Phonesky/Phonesky.apk \
-    vendor/brawn/google/system/product/priv-app/Velvet/Velvet.apk:system/product/priv-app/Velvet/Velvet.apk \
     vendor/brawn/google/system/system_ext/etc/permissions/privapp-permissions-google-system-ext.xml:system/system_ext/etc/permissions/privapp-permissions-google-system-ext.xml \
-    vendor/brawn/google/system/system_ext/priv-app/GoogleFeedback/GoogleFeedback.apk:system/system_ext/priv-app/GoogleFeedback/GoogleFeedback.apk \
-    vendor/brawn/google/system/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk:system/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk
 
 
 # android.hardware.virtualmedia@1.0-service \

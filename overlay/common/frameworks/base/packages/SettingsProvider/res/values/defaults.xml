@@ -29,4 +29,9 @@
 
     <!-- This is disabled by default, but turned on in SetupWizard -->
     <bool name="assisted_gps_enabled">false</bool>
+
+    <!-- Default for Settings.Secure.USER_SETUP_COMPLETE -->
+    <bool name="def_user_setup_complete">true</bool>
+    <bool name="def_device_provisioned">true</bool>
+    
 </resources>
