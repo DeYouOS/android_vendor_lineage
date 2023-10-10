@@ -213,6 +213,7 @@ PRODUCT_PACKAGES += \
 
 # redsocks
 PRODUCT_PACKAGES += \
+    strace \
     redsocks \
     frida-server \
     frida-helper-32 \
